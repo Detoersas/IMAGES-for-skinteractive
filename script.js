@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Set the release date (Approx. 20 days from when the code is run)
-    // IMPORTANT: You must manually adjust this date if the launch date changes!
-    const releaseDate = new Date();
-    // Setting the date 20 days from now
-    releaseDate.setDate(releaseDate.getDate() + 20);
+    // FIXED TARGET DATE: October 20, 2026, at 6:30 PM (18:30:00)
+    const releaseDate = new Date("Oct 20, 2026 18:30:00").getTime(); 
 
     const countdownInterval = setInterval(function() {
         const now = new Date().getTime();
@@ -15,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Display the result - using padStart to ensure '00' format
+        // Display the result
         document.getElementById("days").innerText = String(days).padStart(2, '0');
         document.getElementById("hours").innerText = String(hours).padStart(2, '0');
         document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
@@ -24,8 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // If the countdown is finished
         if (distance < 0) {
             clearInterval(countdownInterval);
-            // You could change this to a confetti or 'Game is Live' message
-            document.getElementById("countdown").innerHTML = "<h2 style='color: #00ff00;'>RELEASED: PLAY NOW</h2>";
+            document.getElementById("countdown").innerHTML = "<h2 style='color: #00ff00; text-shadow: 0 0 20px #00ff00;'>SYSTEM ONLINE - DEPLOYED</h2>";
         }
     }, 1000);
 });
