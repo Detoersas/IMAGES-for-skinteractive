@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // If the countdown is finished
         if (distance < 0) {
             clearInterval(countdownInterval);
-            document.getElementById("countdown").innerHTML = "<h2 style='color: #00ff00; text-shadow: 0 0 20px #00ff00;'>SYSTEM ONLINE - DEPLOYED</h2>";
+            document.getElementById("countdown").innerHTML = "<h2 style='color: var(--color-accent); text-shadow: 0 0 25px var(--color-accent);'>Game releasing SOON</h2>";
         }
     }, 1000);
 });
